@@ -61,7 +61,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" id="close">
 								Login
 							</button>
 						</div>
@@ -80,7 +80,11 @@
 				<script src="https://telegram.org/js/telegram-web-app.js"></script>
 				<script>
 					let tg = window.Telegram.WebApp;
-					let buy = document.getElementById
+					let close = document.getElementById("close");
+
+					close.addEventListener("click", () => {
+						tg.close();
+					});
 				</script>
 			</div>
 		</div>
