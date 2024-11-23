@@ -41,17 +41,17 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" id="procedure">
+						<input class="input100" type="text" id="procedure_x">
 						<span class="focus-input100" data-placeholder="Название"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" id="price">
+						<input class="input100" type="text" id="price_x">
 						<span class="focus-input100" data-placeholder="Цена"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" id="time">
+						<input class="input100" type="text" id="time_x">
 						<span class="focus-input100" data-placeholder="Длительность"></span>
 					</div>
 
@@ -81,6 +81,15 @@
 					let close = document.getElementById("close");
 
 					close.addEventListener("click", () => {
+						let procedure = document.getElementById("procedure_x").value;
+						let price = document.getElementById("price_x").value;
+						let time = document.getElementById("time_x").value;
+						let data = {
+							procedure: procedure,
+							price: price,
+							time: time
+						}
+						tg.sendData(JSON.stringify(data));
 						tg.close();
 					});
 				</script>
